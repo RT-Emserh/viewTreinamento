@@ -1,0 +1,39 @@
+basePath: /
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: Esta é a documentação do treinamento do portal do colaborador.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: view book
+  version: "1.0"
+paths:
+  /viewbook/{ebook}:
+    get:
+      consumes:
+      - application/json
+      description: Exibe um eBook em formato PDF com base no parâmetro fornecido
+      parameters:
+      - description: ID do eBook (1 ou 2)
+        in: path
+        name: ebook
+        required: true
+        type: string
+      produces:
+      - application/pdf
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: file
+      summary: Retorna um eBook específico
+      tags:
+      - eBooks
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"
