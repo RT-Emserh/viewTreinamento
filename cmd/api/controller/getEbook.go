@@ -26,7 +26,7 @@ func GetEbook(ctx *gin.Context) {
 	} else {
 		ebook = "Ebook - Política  de Porta-Vozes"
 	}
-	filePath := filepath.Join("/home/joao/viewPortal/viewTreinamento/pkg/ebooks/", ebook+" (1).pdf")
+	filePath := filepath.Join("./pkg/ebooks/", ebook+" (1).pdf")
 	fileBytes, err := ioutil.ReadFile(filePath)
 
 	fmt.Printf("%s\n", filePath)
